@@ -1,0 +1,236 @@
+{
+  "employee":[
+    {
+      "ID": 1,
+      "Name" : "James King",
+      "Title" : "President and CEO",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "6623624549",
+      "CellPhone" : "5672487556",
+      "SMS" : "ssssss",
+      "Email" : "James@gmail.com",
+      "img":"img/gru-icon.png",
+      "Manager":0,
+      "DirectReports":[
+        2,3,4
+      ]
+    },
+    {
+      "ID": 2,
+      "Name" : "Julie Taylor",
+      "Title" : "VP of Markting",
+      "Sex" : "F",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "6052179951",
+      "CellPhone" : "4022859954",
+      "SMS" : "ssssss",
+      "Email" : "Julie@gmail.com",
+      "img":"img/happy-agnes-icon.png",
+      "Manager":1,
+      "DirectReports":[
+        5,6
+      ]
+    },
+    {
+      "ID": 3,
+      "Name" : "Eugene Lee",
+      "Title" : "CFO",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "6812214155",
+      "CellPhone" : "2267790184",
+      "SMS" : "ssssss",
+      "Email" : "Eugene@gmail.com",
+      "img":"img/Edith-despicable-me-2-icon.png",
+      "Manager":1,
+      "DirectReports":[
+
+      ]
+    },
+    {
+      "ID": 4,
+      "Name" : "John Williams",
+      "Title" : "VP of Engineering",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "8677341824",
+      "CellPhone" : "4132498981",
+      "SMS" : "ssssss",
+      "Email" : "John@gmail.com",
+      "img":"img/Minion-reading-icon.png",
+      "Manager":1,
+      "DirectReports":[
+        8,9
+      ]
+    },
+    {
+      "ID": 5,
+      "Name" : "Anniruddha Bogard",
+      "Title" : "Manager of Markting",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "7091043115",
+      "CellPhone" : "2024456755",
+      "SMS" : "ssssss",
+      "Email" : "annirudbogard@yahoo.ca",
+      "img":"img/Minion-playing-golf-icon.png",
+      "Manager":2,
+      "DirectReports":[
+      ]
+    },
+    {
+      "ID": 6,
+      "Name" : "Onslow Ritchie",
+      "Title" : "Manager of Markting",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "6121908898",
+      "CellPhone" : "4100444751",
+      "SMS" : "ssssss",
+      "Email" : "on_ritc@hotmail.com",
+      "img":"img/despicable-me-2-Minion-icon-2.png",
+      "Manager":2,
+      "DirectReports":[
+        12,13
+      ]
+    },
+    {
+      "ID": 7,
+      "Name" : "Bhupendra Aucoin",
+      "Title" : "Manager of Engineering",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "3062662670",
+      "CellPhone" : "2891538762",
+      "SMS" : "ssssss",
+      "Email" : "bhupendau@hotmail.com",
+      "img":"img/Minion icon.png",
+      "Manager":4,
+      "DirectReports":[
+        8,10,14,15
+      ]
+    },
+    {
+      "ID": 8,
+      "Name" : "Klea Johns",
+      "Title" : "Staff of Engineering",
+      "Sex" : "F",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "7343892266",
+      "CellPhone" : "9010129055",
+      "SMS" : "ssssss",
+      "Email" : "kleajohn@infoseller.com",
+      "img":"img/evil-minion-icon-2.png",
+      "Manager":7,
+      "DirectReports":[
+      ]
+    },
+    {
+      "ID": 9,
+      "Name" : "Sydenham Smartt",
+      "Title" : "Manager of Engineering",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "7780216027",
+      "CellPhone" : "7780216027",
+      "SMS" : "ssssss",
+      "Email" : "sydsmartt@info.com",
+      "img":"img/Angry-Minion-icon.png",
+      "Manager":4,
+      "DirectReports":[
+        11
+      ]
+    },
+    {
+      "ID": 10,
+      "Name" : "Zarek Condit",
+      "Title" : "Staff of Engineering",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "8674207362",
+      "CellPhone" : "8675702018",
+      "SMS" : "ssssss",
+      "Email" : "zarek_con@info.com",
+      "img":"img/Evil-Minion-Icon-3.png",
+      "Manager":7,
+      "DirectReports":[
+      ]
+    },
+    {
+      "ID": 11,
+      "Name" : "Nerhim Hawes",
+      "Title" : "Staff of Engineering",
+      "Sex" : "F",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "7547607455",
+      "CellPhone" : "6625825023",
+      "SMS" : "ssssss",
+      "Email" : "ner-ha@hotmail.com",
+      "img":"img/girl-minion-icon.png",
+      "Manager":9,
+      "DirectReports":[
+      ]
+    },
+    {
+      "ID": 12,
+      "Name" : "Saben Armstead",
+      "Title" : "Staff of Markting",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "8082276019",
+      "CellPhone" : "4798728656",
+      "SMS" : "ssssss",
+      "Email" : "sabe_armste@linux.com",
+      "img":"img/despicable-me-2-Minion-icon-3.png",
+      "Manager":6,
+      "DirectReports":[
+      ]
+    },
+    {
+      "ID": 13,
+      "Name" : "Warrigal Sennett",
+      "Title" : "Staff of Markting",
+      "Sex" : "M",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "9083928657",
+      "CellPhone" : "2282955963",
+      "SMS" : "ssssss",
+      "Email" : "warrisennett@msn.com",
+      "img":"img/Dancing-minion-icon.png",
+      "Manager":6,
+      "DirectReports":[
+      ]
+    },
+    {
+      "ID": 14,
+      "Name" : "Simple Taff",
+      "Title" : "Staff of Engineering",
+      "Sex" : "F",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "5154364700",
+      "CellPhone" : "9012349055",
+      "SMS" : "ssssss",
+      "Email" : "sim_taf@bing.com",
+      "img":"img/evil-minion-icon.png",
+      "Manager":7,
+      "DirectReports":[
+      ]
+    },
+    {
+      "ID": 15,
+      "Name" : "Moth Stiefel",
+      "Title" : "Staff of Engineering",
+      "Sex" : "F",
+      "StartDate" : "05-08-2010",
+      "OfficePhone" : "4508502656",
+      "CellPhone" : "9010685055",
+      "SMS" : "ssssss",
+      "Email" : "mot_stief@freespace.com",
+      "img":"img/evil-minion-icon-4.png",
+      "Manager":7,
+      "DirectReports":[
+      ]
+    }
+  ]
+}

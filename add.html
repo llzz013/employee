@@ -1,0 +1,257 @@
+<div>
+    <hr>
+    <hr>
+    <hr>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-11 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2 text-primary">
+            <h3>Create New Employee:</h3>
+        </div>
+
+    </div>
+
+    <form class="form-horizontal" name="newEmployee" ng-submit="newEmployeeForm()" novalidate>
+        <!--name-->
+        <div class="form-group has-feedback ">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label" for="name">Name:</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" ng-class="{'has-success':newEmployee.name.$valid,'has-warning':(newEmployee.name.$dirty)&&(newEmployee.name.$invalid)}">
+                <input class="form-control"
+                       type="text"
+                       name="name"
+                       ng-model="newData.name"
+                       placeholder="Name"
+                       id="name"
+                       required
+                       tooltip="{{newEmployee.name.$valid?'':'Name is required'}}"
+                       tooltip-trigger="mouseenter"
+                       tooltip-placement="up"
+                        >
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show=newEmployee.name.$valid ></span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-show=(newEmployee.name.$dirty)&&(!newEmployee.name.$valid)></span>
+            </div>
+        </div>
+
+        <!--title-->
+        <div class="form-group has-feedback ">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label" for="title">Title:</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" ng-class="{'has-success':newEmployee.title.$valid,'has-warning':(newEmployee.title.$dirty)&&(newEmployee.title.$invalid)}">
+                <input class="form-control"
+                       type="text"
+                       name="title"
+                       ng-model="newData.title"
+                       placeholder="Title"
+                       id="title"
+                       required
+                       tooltip="{{newEmployee.title.$valid?'':'Title is required'}}"
+                       tooltip-trigger="mouseenter"
+                       tooltip-placement="up"
+                        >
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show=newEmployee.title.$valid ></span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-show=(newEmployee.title.$dirty)&&(!newEmployee.title.$valid)></span>
+            </div>
+        </div>
+
+        <!--sex-->
+        <div class="form-group has-feedback">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label">Sex:</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" ng-class="{'has-success':newEmployee.sex.$valid,'has-warning':(newEmployee.sex.$dirty)&&(newEmployee.sex.$invalid)}">
+                <label class="radio-inline">
+                    <input type="radio" name="sex" ng-model="newData.sex" value="M" required> male
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="sex" ng-model="newData.sex" value="F" required> female
+                </label>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show=newEmployee.sex.$valid ></span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-show=(newEmployee.sex.$dirty)&&(!newEmployee.sex.$valid)></span>
+            </div>
+        </div>
+
+        <!--startDate-->
+        <div class="form-group has-feedback">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label" for="datePick">Start Date:</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" ng-class="{'has-success':newEmployee.startDate.$valid,'has-warning':(newEmployee.startDate.$dirty)&&(newEmployee.startDate.$invalid)}">
+                <p class="input-group">
+                    <input type="text" class="form-control" name="startDate" datepicker-popup="{{format}}" ng-model="newData.startDate" is-open="opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Close" id="datePick">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!--officePhone-->
+        <div class="form-group has-feedback">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label" for="officePhone">Office Phone:</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" ng-class="{'has-success':newEmployee.officePhone.$valid,'has-warning':(newEmployee.officePhone.$dirty)&&(newEmployee.officePhone.$invalid)}">
+                <input class="form-control" type="text"
+                       ng-minlength="10"
+                       ng-maxlength="10"
+                       name="officePhone"
+                       ng-model="newData.officePhone"
+                       placeholder="Office Phone"
+                       id="officePhone"
+                       ng-pattern="/^[0-9]*$/"
+                       required
+                       tooltip="{{newEmployee.officePhone.$valid?'':(newEmployee.officePhone.$pristine?'Office phone number is required':(newEmployee.officePhone.$error.pattern?'Phone number should contain numbers only':(newEmployee.officePhone.$error.minlength?'Phone number too short':'Phone number too long')))}}"
+                       tooltip-trigger="mouseenter"
+                       tooltip-placement="up">
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show=newEmployee.officePhone.$valid ></span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-show=(newEmployee.officePhone.$dirty)&&(newEmployee.officePhone.$invalid)></span>
+            </div>
+        </div>
+        <!--
+        <div>"1"+{{newEmployee.officePhone.$valid}}</div>
+        <div>"2+{{newEmployee.officePhone.$dirty}}</div>
+        <div>"3+{{newEmployee.officePhone.$error}}</div>
+        -->
+
+        <!--cellPhone-->
+        <div class="form-group has-feedback">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label" for="cellPhone">Cell Phone:</label>
+
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" ng-class="{'has-success':newEmployee.cellPhone.$valid,'has-warning':(newEmployee.cellPhone.$dirty)&&(newEmployee.cellPhone.$invalid)}">
+                <input class="form-control" type="text"
+                       ng-minlength="10"
+                       ng-maxlength="10"
+                       name="cellPhone"
+                       ng-model="newData.cellPhone"
+                       placeholder="Cell Phone"
+                       id="cellPhone"
+                       ng-pattern="/^[0-9]*$/"
+                       required
+                       tooltip="{{newEmployee.cellPhone.$valid?'':(newEmployee.cellPhone.$pristine?'Phone number is required':(newEmployee.cellPhone.$error.pattern?'Phone number should contain numbers only':(newEmployee.cellPhone.$error.minlength?'Phone number too short':'Phone number too long')))}}"
+                       tooltip-trigger="mouseenter"
+                       tooltip-placement="up"
+                        />
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show=newEmployee.cellPhone.$valid ></span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-show=(newEmployee.cellPhone.$dirty)&&(!newEmployee.cellPhone.$valid)></span>
+            </div>
+        </div>
+
+        <!--sms-->
+        <div class="form-group has-feedback">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label" for="smsInput">SMS:</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" ng-class="{'has-success':newEmployee.sms.$valid,'has-warning':(newEmployee.sms.$dirty)&&(newEmployee.sms.$invalid)}">
+                <input class="form-control" type="text" name="sms" ng-model="newData.sms" placeholder="SMS" id="smsInput" required>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show=newEmployee.sms.$valid ></span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-show=(newEmployee.sms.$dirty)&&(!newEmployee.sms.$valid)></span>
+            </div>
+        </div>
+
+        <!--<div class="form-group row">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label">Email:</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                <input class="form-control" type="email" name="emailInput" ng-model="email" placeholder="Email" required >
+                <p>{{newEmployee.emailInput.$valid}}</p>
+            </div>
+        </div>-->
+
+        <!--email-->
+        <div class="form-group has-feedback">
+            <label class="control-label col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2" for="email-test">Email</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" ng-class="{'has-success':newEmployee.emailInput.$valid,'has-warning':(newEmployee.emailInput.$dirty)&&(newEmployee.emailInput.$invalid)}">
+                <input class="form-control"
+                       type="email"
+                       name="emailInput"
+                       ng-model="newData.email"
+                       placeholder="Email"
+                       required
+                       id="email-test"
+                       tooltip="{{newEmployee.emailInput.$valid?'':(newEmployee.emailInput.$dirty?'Invalid email format':'Email required')}}"
+                       tooltip-trigger="mouseenter"
+                       tooltip-placement="up"
+                        >
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show=newEmployee.emailInput.$valid ></span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-show=(newEmployee.emailInput.$dirty)&&(!newEmployee.emailInput.$valid)></span>
+            </div>
+        </div>
+
+        <!--img-->
+        <div class="form-group has-feedback">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label" for="img">Personal Img:</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" ng-class="{'has-success':newEmployee.img.$valid,'has-warning':(newEmployee.img.$dirty)&&(newEmployee.img.$invalid)}">
+                <input class="form-control" type="text" name="img" ng-model="newData.img" placeholder="Personal img" id="img" required>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show=newEmployee.img.$valid ></span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true" ng-show=(newEmployee.img.$dirty)&&(!newEmployee.img.$valid)></span>
+            </div>
+        </div>
+
+        <!--manager-->
+        <div class="form-group has-feedback">
+            <label class="col-xs-12 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 control-label">Manager:</label>
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                <!--<input class="form-control" type="text" ng-model="manager" placeholder="Manager">-->
+                <button type="button" class="btn btn-info" data-toggle="modal" ng-model="newData.manager" data-target="#myModal">{{ManagerSelect}}</button>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-11 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
+            <button class="btn btn-primary" type="submit" ng-disabled="newEmployee.$invalid">
+                <span class="glyphicon glyphicon-save"></span>Save Changes
+            </button>
+        </div>
+    </form>
+
+    <hr>
+
+
+    <div class="row" ng-repeat="alert in alerts">
+        <alert type="{{alert.type}}" close="closeAlert($index)" class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">{{alert.msg}}</alert>
+    </div>
+
+
+    <!--
+    <button popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" class="btn btn-default" data-placement="top">Popover With Template</button>
+
+    <script type="text/ng-template" id="myPopoverTemplate.html">
+        <div>
+            <div ng-repeat="url in imageUrl">
+                <img ng-src="{{url}}" class="img-rounded" style="width:50px">
+            </div>
+        </div>
+
+    </script>
+    -->
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog container">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Choose your manager</h4>
+                </div>
+
+                <div class="modal-body" style="overflow:scroll;height:400px ">
+                        <div class="row" ng-repeat="employee in employees" >
+
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+
+                                <img ng-src="{{employee.img}}" class="img-responsive">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <h4>{{employee.Name}}</h4>
+                                <input type="radio" name="manager" ng-model="$parent.manager" value={{employee.ID}}>
+                            </div>
+                            <hr>
+                        </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-success"  data-dismiss="modal">
+                          <span class="glyphicon glyphicon-pencil"></span>Save
+                    </button>
+                    <button class="btn btn-warning" ng-click="DeleteManager()" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-trash"></span>Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,164 @@
+<div>
+    <br>
+    <br>
+</div>
+
+<!--<div ng-repeat="employee in employees" style="text-align:center">-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-4 col-sm-4 col-xs-4">-->
+                <!--<img src="{{employee.img}}" style="height:60px;width:60px">-->
+            <!--</div>-->
+            <!--<div class="col-md-3 col-sm-3 col-xs-3">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                        <!--{{ employee.Name }}-->
+                    <!--</div>-->
+                    <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                        <!--{{ employee.Title }}-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-md-3 col-sm-3 col-xs-3">-->
+                <!--{{ employee.DirectReports.length}}-->
+            <!--</div>-->
+            <!--<div class="col-md-2 col-sm-2 col-xs-2">-->
+                <!--<a href="#/detail/{{employee.ID}}">-->
+                    <!--<button type="button" class="btn btn-success">-->
+                        <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                    <!--</button>-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--<div class="col-md-12 col-sm-12 col-xs-12"><hr></div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div>
+    <nav class="navbar navbar-default top">
+        <div class="form-inline">
+            <form>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <div class="form-group">
+                                <h4 ng-model="employeer">{{employeer}}'s Reports</h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                            <div class="form-group right" >
+                                <div class="input-group">
+                                    <div class="input-group-addon">Sort by</div>
+                                    <select class="form-control" ng-model="sort">
+                                        <option value="ID">ID</option>
+                                        <option value="Name">Name</option>
+                                        <option value="Title">Title</option>
+                                        <option value="Sex">Sex</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group right">
+                                <div class="input-group" >
+                                    <div class="input-group-addon" >Filter</div>
+                                    <input type="text" class="form-control" placeholder="Input key words" ng-model="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row center">
+                <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        ID
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                        Picture
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-3">
+                        Name/Title
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div calss="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                Detail
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                Reports
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+
+<div infinite-scroll="myPagingFunction()" infinite-scroll-distance="0">
+    <div ng-repeat="employee in display | filter:text | orderBy : sort">
+        <div class="container center">
+            <div class="row">
+                <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-0 col-xs-offset-0">
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                        {{ employee.ID }}
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                        <img ng-src="{{employee.img}}" style="height:60px;width:60px">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                {{ employee.Name }}
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                {{ employee.Title }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <a href="#/detail/{{employee.ID}}">
+                                    <button type="button" class="btn btn-success">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"
+                                 tooltip="{{employee.DirectReports.length?'':'No Reports'}}"
+                                 tooltip-trigger="mouseenter"
+                                 tooltip-placement="up"
+                                    >
+                                <a href="#/reports/{{employee.ID}}">
+                                    <button type="button" class="btn btn-success" ng-disabled="{{employee.DirectReports.length}} == 0">
+                                        {{ employee.DirectReports.length}}
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

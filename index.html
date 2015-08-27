@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Emplyees manage</title>
+    <link rel="stylesheet" href = "support/bootstrap.min.css">
+    <script src="support/jquery.min.js"></script>
+    <script src="support/angular.min.js"></script>
+    <script src="support/angular-route.min.js"></script>
+    <script src="support/bootstrap.min.js"></script>
+    <script src="support/ng-infinite-scroll.js"></script>
+    <script src="support/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script src="javaScript/employee.js"></script>
+    <script src="javaScript/list-controller.js"></script>
+    <script src="javaScript/detail-controller.js"></script>
+    <script src="javaScript/report-controller.js"></script>
+    <script src="javaScript/add-controller.js"></script>
+    <script src="javaScript/filter.js"></script>
+    <style>
+        .right{
+            float:right;
+        }
+        .left{
+            float:left;
+        }
+        .center{
+            text-align:center;
+        }
+        .top{
+            position: fixed;
+            z-index: +1;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#/"><div class="navbar-brand"><span class="glyphicon glyphicon-home"></span></div></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#/list"><span class="glyphicon glyphicon-user"></span> Users List</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="#/add"><span class="glyphicon glyphicon-user"></span> Add Employee</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container" ng-controller="myCtrl" >
+    <div ng-view>
+        <h1>empty content</h1>
+    </div>
+</div>
+
+
+</body>
+
+</html>
